@@ -68,7 +68,7 @@ def transcribe(
                 output : Union[str, None] = Query(default="json", enum=["json", "vtt", "srt"]),
                 ):
 
-    result = run_asr(audio_file.file, task, language)
+    result = run_asr(audio_file.file, task, language, prompt)
     filename = audio_file.filename.split('.')[0]
     if(output == "srt"):
         srt_file = StringIO()

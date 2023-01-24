@@ -124,6 +124,8 @@ export ASR_MODEL=base
 ```sh
 # Build Image
 docker build -t whisper-asr-webservice .
+docker tag whisper-asr-webservice:latest wavelengthapp/whisper-asr-webservice:latest 
+docker push wavelengthapp/whisper-asr-webservice:latest 
 
 # Run Container
 docker run -d -p 9000:9000 whisper-asr-webservice
